@@ -1,0 +1,14 @@
+body {
+    background-color: aqua;
+}
+
+.container{
+    background-color: azure;
+    height: 100%;
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+header{
+    background-color: beige;
+
+}

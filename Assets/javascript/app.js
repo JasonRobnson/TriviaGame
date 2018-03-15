@@ -19,12 +19,22 @@
 // };
 
 let write = document.getElementById("timerDiv");
+let timeoutID;
 
-function timeOut() {
-    let write = document.getElementById("#timerDiv")
-    timerDiv.innerHTML = ("<b>this is where the timer will go!</b>");
-};
+// function timeOut() {
+//     if ($("buttonStart").on("click")); {
+//     alert("start button has been clicked");
+//     }
+//     // timeoutID = window.setTimeout(5000);
+//     // timerDiv.innerHTML = ("<b>this is where the timer will go!</b>");
+// };
 
+buttonStart = getElementById("#buttonStart")
 
-timeOut();
+$(buttonStart).click(function() {
+    timeoutID = window.setTimeout(5000);
+    if(!clicked){
+        alert("start button has been clicked!");
+    }
+});
 

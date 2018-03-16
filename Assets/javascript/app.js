@@ -29,7 +29,7 @@ $("#questionDiv").html(triviaQuestion);
 
 function loadAnswer(){
     $("#answerDiv").text();
-    $("#answerDiv").prepend("<button type=\"button\">"+ trivia.answer[0] + "</button><button type=\"button\">" +  trivia.answer[1] + "</button><button type=\"button\">"+ trivia.answer[2] + "</button><button type=\"button\">" +  trivia.answer[3] + "</button>"); 
+    $("#answerDiv").prepend("<button id=\"buttonA\" type=\"button\">"+ trivia.answer[0] + "</button><buttonid=\"buttonB\" type=\"button\">" +  trivia.answer[1] + "</button><button id=\"buttonC\" type=\"button\">"+ trivia.answer[2] + "</button><button id=\"buttonD\" type=\"button\">" +  trivia.answer[3] + "</button>"); 
 
     
 };

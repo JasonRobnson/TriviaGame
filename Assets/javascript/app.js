@@ -23,13 +23,15 @@ function startTimer() {
     setTimeout(function(){ alert("Start Trivia button has been pushed!"); }, 300);
 };
 function loadQuestion (){
-     document.getElementById("#questionDiv");
-    $("#questionDiv").html(triviaQuestion);
+     $("#questionDiv").text();
+$("#questionDiv").html(triviaQuestion);
 };
 
 function loadAnswer(){
-    document.getElementById("#answerDiv");
-    $("#answerDiv").html(triviaAnswer);
+    $("#answerDiv").text();
+    $("#answerDiv").prepend("<button type=\"button\">"+ trivia.answer[0] + "</button><button type=\"button\">" +  trivia.answer[1] + "</button><button type=\"button\">"+ trivia.answer[2] + "</button><button type=\"button\">" +  trivia.answer[3] + "</button>"); 
+
+    
 };
 startButtonHandler();
 

@@ -1,7 +1,7 @@
 'strict'
 const trivia = {
     questions: "This item dominated the Hip-Hop and Emo seen. It could be found at your local mall, but now relegated to your local sports store?",
-    answer: ["Cartiers", "Timberlands", "Red Black Lumber Jacks", "Sweatbands",],
+    answer: ["Cartiers  ", "Timberlands ", "Flannel Jackets ", "Sweatbands  ",],
     correctAnswer:"Sweatbands", 
     // image:?????????????????????????,
 };
@@ -24,12 +24,12 @@ function startTimer() {
 };
 function loadQuestion (){
      document.getElementById("#questionDiv");
-    $("#questionDiv").append(triviaQuestion);
+    $("#questionDiv").html(triviaQuestion);
 };
 
 function loadAnswer(){
     document.getElementById("#answerDiv");
-    $("#answerDiv").append(triviaAnswer);
+    $("#answerDiv").html(triviaAnswer);
 };
 startButtonHandler();
 

@@ -1,5 +1,70 @@
 'strict'
 
 $("#buttonStart").click(function(){
+    $("#buttonStart").remove();
+
     alert("You have clicked the sart button!")
 });
+
+var Question = [{
+    Question: "This item dominated the Hip-Hop and Emo seen. It could be found at your local mall, but now relegated to your local sports store.",
+    answer: ["Cartiers", "Timberlands", "Red Black Lumber Jacks", "Sweatbands",],
+    correctAnswer:"Sweatbands", 
+    // image:?????????????????????????,
+    // },{
+    // question: ,
+    // answer: [],
+    // correctAnswer:"Streaky Hair Highlights ",""
+    // image: ??????????????,
+    // },{
+    // question: ,
+    // answer: [],
+    // correctAnswer:"Tall Tees" ,
+    // image: ??????????????,
+    // },{
+    // question: ,
+    // answer: [],
+    // correctAnswer:"Trucker Hats",
+    // image: ??????????????,
+    // },{
+    // question: ,
+    // answer: [],
+    // correctAnswer:"Livestrong Bracelets" ,
+    // image: ??????????????,
+    // },{
+    // question: ,
+    // answer: [],
+    // correctAnswer:"Popped Collar Polos" ,
+    // image: ??????????????,
+    // },{
+    // question: ,
+    // answer: [],
+    // correctAnswer:"Fedoras" ,
+    // image: ??????????????,
+    // },{
+    // question: ,
+    // answer: [],
+    // correctAnswer:"V-Neck T-shirts" ,
+    // image: ??????????????,
+    // },{
+    // question: ,
+    // answer: [],
+    // correctAnswer:"Shutter Shades" ,
+    // image: ??????????????,
+    // },{
+    // question: ,
+    // answer: [],
+    // correctAnswer:"Throwback Jerseys" ,
+    // image: ??????????????,
+    // },{
+    // question: ,
+    // answer: [],
+    // correctAnswer:"Bootcut Jeans" ,
+    // image: ??????????????,
+    // },{
+    // question: ,
+    // answer: [],
+    // correctAnswer:"Emo/Bieber Hair" ,
+    // image: ??????????????,
+    // }
+}];

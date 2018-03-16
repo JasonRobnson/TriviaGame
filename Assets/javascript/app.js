@@ -1,19 +1,40 @@
 'strict'
+const trivia = {
+    questions: "This item dominated the Hip-Hop and Emo seen. It could be found at your local mall, but now relegated to your local sports store?",
+    answer: ["Cartiers", "Timberlands", "Red Black Lumber Jacks", "Sweatbands",],
+    correctAnswer:"Sweatbands", 
+    // image:?????????????????????????,
+};
+
+var x = trivia.questions;
+var y = trivia.answer;
 
 function startButtonHandler() {
 $("#buttonStart").click(function() {
     startTimer();
-    console.log("Hi");
+    loadQuestion();
+    loadAnswer();
+    console.log(x);
  
 })
 };
+
 
 function startTimer() {
     $("#buttonStart").hide();
     setTimeout(function(){ alert("Hello"); }, 3000);
 };
+function loadQuestion (){
+    document.getElementById("#questionDiv");
+    $("#questionDiv").append(x);
+};
 
+function loadAnswer(){
+    document.getElementById("#answerDiv");
+    $("#answerDiv").append(y);
+};
 startButtonHandler();
+
 
 // var game = {
 //     question: ["questions"],
@@ -56,11 +77,7 @@ startButtonHandler();
    
 // }
 
-// var Question = [{
-//     Question: "This item dominated the Hip-Hop and Emo seen. It could be found at your local mall, but now relegated to your local sports store.",
-//     answer: ["Cartiers", "Timberlands", "Red Black Lumber Jacks", "Sweatbands",],
-//     correctAnswer:"Sweatbands", 
-    // image:?????????????????????????,
+
     // },{
     // question: ,
     // answer: [],

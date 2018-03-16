@@ -1,15 +1,65 @@
 'strict'
 
-$("#buttonStart").click(function(){
-    $("#buttonStart").remove();
+function startButtonHandler() {
+$("#buttonStart").click(function() {
+    startTimer();
+    console.log("Hi");
+ 
+})
+};
 
-    alert("You have clicked the sart button!")
-});
+function startTimer() {
+    $("#buttonStart").hide();
+    setTimeout(function(){ alert("Hello"); }, 3000);
+};
 
-var Question = [{
-    Question: "This item dominated the Hip-Hop and Emo seen. It could be found at your local mall, but now relegated to your local sports store.",
-    answer: ["Cartiers", "Timberlands", "Red Black Lumber Jacks", "Sweatbands",],
-    correctAnswer:"Sweatbands", 
+startButtonHandler();
+
+// var game = {
+//     question: ["questions"],
+//     currentQuestion:0,
+//     timer: 30,
+//     correct: 0,
+//     incorrect: 0,
+//     countdown: function () {
+//         game.timer--;
+//         $('#timerDiv').html(game.counter);
+//         if(game.counter<=0){
+//              console.log("Time UP!");
+//         }
+
+//     },
+//     loadQuestion: function (){
+
+//     },
+//     nextQuestion: function(){
+
+//     },
+//     timeUp: function(){
+
+//     },
+//     result: function(){
+
+//     },
+//     clicked: function(){
+
+//     },
+//     answeredCorrectly: function (){
+
+//     },
+//     answeredIncorrectly: function(){
+
+//     },
+//     reset: function(){
+
+//     },
+   
+// }
+
+// var Question = [{
+//     Question: "This item dominated the Hip-Hop and Emo seen. It could be found at your local mall, but now relegated to your local sports store.",
+//     answer: ["Cartiers", "Timberlands", "Red Black Lumber Jacks", "Sweatbands",],
+//     correctAnswer:"Sweatbands", 
     // image:?????????????????????????,
     // },{
     // question: ,
@@ -67,4 +117,6 @@ var Question = [{
     // correctAnswer:"Emo/Bieber Hair" ,
     // image: ??????????????,
     // }
-}];
+// }];
+
+// startTimer()};

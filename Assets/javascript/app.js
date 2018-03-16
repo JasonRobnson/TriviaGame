@@ -6,32 +6,30 @@ const trivia = {
     // image:?????????????????????????,
 };
 
-var x = trivia.questions;
-var y = trivia.answer;
+var triviaQuestion = trivia.questions;
+var triviaAnswer = trivia.answer;
 
 function startButtonHandler() {
 $("#buttonStart").click(function() {
-    startTimer();
     loadQuestion();
-    loadAnswer();
-    console.log(x);
- 
+    setTimeout(loadAnswer,(2000));
+    // startTimer();
 })
 };
 
 
 function startTimer() {
-    $("#buttonStart").hide();
-    setTimeout(function(){ alert("Hello"); }, 3000);
+    
+    setTimeout(function(){ alert("Start Trivia button has been pushed!"); }, 300);
 };
 function loadQuestion (){
-    document.getElementById("#questionDiv");
-    $("#questionDiv").append(x);
+     document.getElementById("#questionDiv");
+    $("#questionDiv").append(triviaQuestion);
 };
 
 function loadAnswer(){
     document.getElementById("#answerDiv");
-    $("#answerDiv").append(y);
+    $("#answerDiv").append(triviaAnswer);
 };
 startButtonHandler();
 

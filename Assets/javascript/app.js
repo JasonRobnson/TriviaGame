@@ -28,6 +28,7 @@ function startButtonHandler() {
     startButton.text("Start");
     $("#buttonStart").append(startButton);
     $("#buttonStart").on('click',function (){
+        $(this).hide();
         loadQuestion();
         setTimeout(loadAnswer, (1500));
 

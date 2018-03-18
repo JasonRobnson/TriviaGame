@@ -4,6 +4,9 @@ $(document).ready(function() {
     startButtonHandler();
 });
 
+$(document).on('click','answerKeys', function(e){
+
+})
 const trivia = [{
     questions: "This item dominated the Hip-Hop and Emo seen. It could be found at your local mall, but now relegated to your local sports store?",
     answer: ["Cartiers  ", "Timberlands ", "Flannel Jackets ", "Sweatbands  ", ],
@@ -18,8 +21,9 @@ const trivia = [{
 },
 ];
 
-var triviaQuestion = trivia.questions;
-var triviaAnswer = trivia.answer;
+let triviaQuestion = trivia.questions;
+let triviaAnswer = trivia.answer;
+let counter = 0;
 
 function startButtonHandler() {
     $("#buttonStart").html();
@@ -30,7 +34,12 @@ function startButtonHandler() {
     $("#buttonStart").on('click',function (){
         $(this).hide();
         loadQuestion();
-        setTimeout(loadAnswer, (1500));
+        gameTimer();
+        loadAnswer();
+        
+       
+        // setTimeout( , (1500));
+
 
     })
     // $("#buttonStart").click(function () {
@@ -42,15 +51,24 @@ function startButtonHandler() {
 };
 
 
-function startTimer() {
+function gameTimer() {
+    let counter = 30;
+    let clockTimer = setInterval(function() {
+        console.log(counter);
+        counter--
+        document.getElementById("timerDiv").innerHTML = counter;
+        if (counter === 0){
+            console.log("Happy Birthday!");
+            clearInterval(clockTimer);
+        }
+        }, 1000);
+    };
 
-    setTimeout(function () {
-        alert("Start Trivia button has been pushed!");}, 3000);
-};
+
 
 function loadQuestion() {
     $("#questionDiv").text();
-    $("#questionDiv").html(trivia[0].questions);
+    $("#questionDiv").html('<h2>' + trivia[0].questions);
 };
 
 function loadAnswer() {
@@ -61,6 +79,7 @@ function loadAnswer() {
         answerButton.attr("data-answerButton", trivia[0].answer[x]);
         answerButton.append(trivia[0].answer[x]);
         $("#allbuttons").append(answerButton);
+       
     }
     // $("#allbuttons").prepend("<button id=\"buttonA\"></button><button id=\"buttonB\"></button><button id=\"buttonC\"></button><button id=\"buttonD\"></button>");
     // // for loop

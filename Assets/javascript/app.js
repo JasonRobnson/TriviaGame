@@ -1,4 +1,9 @@
 'strict'
+
+$(document).ready(function() {
+    startButtonHandler();
+});
+
 const trivia = [{
     questions: "This item dominated the Hip-Hop and Emo seen. It could be found at your local mall, but now relegated to your local sports store?",
     answer: ["Cartiers  ", "Timberlands ", "Flannel Jackets ", "Sweatbands  ", ],
@@ -17,12 +22,22 @@ var triviaQuestion = trivia.questions;
 var triviaAnswer = trivia.answer;
 
 function startButtonHandler() {
-    $("#buttonStart").click(function () {
+    $("#buttonStart").html();
+    let startButton = $("<button>");
+    startButton.addClass("startButton");
+    startButton.text("Start");
+    $("#buttonStart").append(startButton);
+    $("#buttonStart").on('click',function (){
         loadQuestion();
         setTimeout(loadAnswer, (1500));
-        // $("#allbuttons").hide();
-        // startTimer();
+
     })
+    // $("#buttonStart").click(function () {
+    //     loadQuestion();
+    //     setTimeout(loadAnswer, (1500));
+    //     // $("#allbuttons").hide();
+    //     // startTimer();
+    // })
 };
 
 
@@ -65,7 +80,6 @@ $("#allbuttons").on('click','.answerKeys',function(){
     console.log($(this).attr("data-answerButton"));
 })
 
-startButtonHandler();
 
 
 // var game = {

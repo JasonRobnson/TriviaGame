@@ -23,7 +23,9 @@ const trivia = [{
 
 let triviaQuestion = trivia.questions;
 let triviaAnswer = trivia.answer;
-let counter = 0;
+let counter = 5;
+let timer;
+
 
 function startButtonHandler() {
     $("#buttonStart").html();
@@ -36,39 +38,37 @@ function startButtonHandler() {
         loadQuestion();
         gameTimer();
         loadAnswer();
-        
-       
-        // setTimeout( , (1500));
-
-
     })
-    // $("#buttonStart").click(function () {
-    //     loadQuestion();
-    //     setTimeout(loadAnswer, (1500));
-    //     // $("#allbuttons").hide();
-    //     // startTimer();
-    // })
 };
 
 
 function gameTimer() {
-    let counter = 30;
-    let clockTimer = setInterval(function() {
-        console.log(counter);
-        counter--
-        document.getElementById("timerDiv").innerHTML = counter;
-        if (counter === 0){
-            console.log("Happy Birthday!");
-            clearInterval(clockTimer);
-        }
-        }, 1000);
+     $("#timerDiv").text(counter);
+        timer = setInterval(function() {
+            $("#timerDiv").text(counter);
+            if (counter === 0) {
+                timeOver();
+            } else {
+                counter--;
+            }
+        },1000);
     };
 
+        // $("#timerDiv").html(counter);
+     
+        // }
+
+function timeOver() {
+    clearInterval(timer);
+    $("#timerDiv").html('<h2>Out of Time!</h2>');
+
+}
 
 
 function loadQuestion() {
     $("#questionDiv").text();
     $("#questionDiv").html('<h2>' + trivia[0].questions);
+    
 };
 
 function loadAnswer() {

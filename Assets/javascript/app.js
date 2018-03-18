@@ -12,15 +12,50 @@ const trivia = [{
     questions: "This item dominated the Hip-Hop and Emo scene. It could be found at your local mall, but now relegated to your local sports store?",
     answer: ["Cartiers  ", "Timberlands ", "Flannel Jackets ", "Sweatbands  ", ],
     correctAnswer: "Sweatbands",
-    // image:?????????????????????????,
+    image: "./Assets/Images/headBands.jpg",
 },
 {
-    questions: "This item dominated the Hip-Hop and Emo scene. It could be found at your local mall, but now relegated to your local sports store?",
-    answer: ["Cartiers  ", "Timberlands ", "Flannel Jackets ", "Sweatbands  ", ],
-    correctAnswer: "Sweatbands",
-    // image:?????????????????????????,
-},
-];
+    questions: "These wearable items were cheap, colorful, and fit with any fashion style.",
+    answer: ["Plastic Watches", "Drawstring Backpack", "Blank Sweatshirts", "Grills", ],
+    correctAnswer: "Plastic Watches",
+    image: "./Assets/Images/plasticWatches.jpg",
+},{
+    question: "Which hairstyle was introduce during the 2000's by soccer God David Beckham?",
+    answer: ["Mullet", "Bowl Cut", "Faux Hawk", "Buzz Cut",],
+    correctAnswer:"Faux Hawk",
+    image:"./Assets/Images/fauxHawk.jpg",
+    },{
+    question: "This 2000's trend was rocked by the likes of Diddy, Kanye, and others while poppin bottles of bub." ,
+    answer: ["French Cuffs", "Gold Grills", "Popped Collars", "Diamond Rolexes", ],
+    correctAnswer:"Popped Collars" ,
+    image: "./Assets/Images/poppedCollar.jpg",
+    },{
+    question:"This clothing trend during the 2000's decayed to a dead product.",
+    answer: ["Blank Sweatshirts", "Organic Clothing","Snorkel Jackets", "Waxed Cotton",],
+    correctAnswer:"Organic Clothing",
+    image: "./Assets/Images/OrganicClothing.jpg",
+    },{
+    question:"This headgear was once a symbol of class during the 40's and '50's, but celebs like Justin Timberlake downgraded its flare.",
+    answer: ["Fedoras", "Stetsons", "Top-hats","Skullies",],
+    correctAnswer:"Fedora",
+    image: "./Assets/Images/Fedora.jpg",
+    },{
+    question:"RUN DMC used these to break down coliseum doors, but reappeared in the 2000's but now these joints not colelct dust in your closet.",
+    answer: ["Kango Hats","Patent Leater Shoes",  "Snake-skin glasses", "Gold Ropes",],
+    correctAnswer:"Patent leather shoes" ,
+    image: "./Assets/Images/PantentLeather.jpg",
+    },{
+    question:"This fashion product broke the bank during the 2000's often costing $300 bucks for a pair" ,
+    answer: ["Denim Jeans", "Red Bottoms", "Saddle Boots","Aviator Sunglasses"],
+    correctAnswer:"Fedoras" ,
+    image: "./Assets/Images/Denim.jpg",
+    },{
+    question: "This 2000's fashion trend kept your pants safe from high waters.",
+    answer: ["Loafers", "Cuffed Pants","Jean Cutoffs","Air Force 1's", ],
+    correctAnswer:"V-Neck T-shirts" ,
+    image: "./Assets/Images/airForce1.jpg",
+    }];
+
 
 let triviaQuestion = trivia.questions;
 let triviaAnswer = trivia[0].answer;
@@ -154,62 +189,6 @@ function wrongAnswer() {
 // }
 
 
-// },{
-// question: ,
-// answer: [],
-// correctAnswer:"Streaky Hair Highlights ",""
-// image: ??????????????,
-// },{
-// question: ,
-// answer: [],
-// correctAnswer:"Tall Tees" ,
-// image: ??????????????,
-// },{
-// question: ,
-// answer: [],
-// correctAnswer:"Trucker Hats",
-// image: ??????????????,
-// },{
-// question: ,
-// answer: [],
-// correctAnswer:"Livestrong Bracelets" ,
-// image: ??????????????,
-// },{
-// question: ,
-// answer: [],
-// correctAnswer:"Popped Collar Polos" ,
-// image: ??????????????,
-// },{
-// question: ,
-// answer: [],
-// correctAnswer:"Fedoras" ,
-// image: ??????????????,
-// },{
-// question: ,
-// answer: [],
-// correctAnswer:"V-Neck T-shirts" ,
-// image: ??????????????,
-// },{
-// question: ,
-// answer: [],
-// correctAnswer:"Shutter Shades" ,
-// image: ??????????????,
-// },{
-// question: ,
-// answer: [],
-// correctAnswer:"Throwback Jerseys" ,
-// image: ??????????????,
-// },{
-// question: ,
-// answer: [],
-// correctAnswer:"Bootcut Jeans" ,
-// image: ??????????????,
-// },{
-// question: ,
-// answer: [],
-// correctAnswer:"Emo/Bieber Hair" ,
-// image: ??????????????,
 // }
-// }];
 
 // startTimer()};

@@ -43,9 +43,9 @@ function startButtonHandler() {
 
 
 function gameTimer() {
-     $("#timerDiv").text(counter);
-        timer = setInterval(function() {
-            $("#timerDiv").text(counter);
+    //  $("#timerDiv").html( counter);
+      let timer = setInterval(function() {
+            $("#timerDiv").html("<h6>You have " + counter + " seconds reaming...");
             if (counter === 0) {
                 timeOver();
             } else {
@@ -54,9 +54,6 @@ function gameTimer() {
         },1000);
     };
 
-        // $("#timerDiv").html(counter);
-     
-        // }
 
 function timeOver() {
     clearInterval(timer);
@@ -67,7 +64,7 @@ function timeOver() {
 
 function loadQuestion() {
     $("#questionDiv").text();
-    $("#questionDiv").html('<h2>' + trivia[0].questions);
+    $("#questionDiv").html('<h3>' + trivia[0].questions);
     
 };
 

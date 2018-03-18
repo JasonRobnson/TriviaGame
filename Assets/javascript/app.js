@@ -4,17 +4,18 @@ $(document).ready(function() {
     startButtonHandler();
 });
 
-$(document).on('click','answerKeys', function(e){
+// $(document).on('click','.answerKeys', function(){
+//     trivia.clicked();
+// })
 
-})
 const trivia = [{
-    questions: "This item dominated the Hip-Hop and Emo seen. It could be found at your local mall, but now relegated to your local sports store?",
+    questions: "This item dominated the Hip-Hop and Emo scene. It could be found at your local mall, but now relegated to your local sports store?",
     answer: ["Cartiers  ", "Timberlands ", "Flannel Jackets ", "Sweatbands  ", ],
     correctAnswer: "Sweatbands",
     // image:?????????????????????????,
 },
 {
-    questions: "This item dominated the Hip-Hop and Emo seen. It could be found at your local mall, but now relegated to your local sports store?",
+    questions: "This item dominated the Hip-Hop and Emo scene. It could be found at your local mall, but now relegated to your local sports store?",
     answer: ["Cartiers  ", "Timberlands ", "Flannel Jackets ", "Sweatbands  ", ],
     correctAnswer: "Sweatbands",
     // image:?????????????????????????,
@@ -22,7 +23,8 @@ const trivia = [{
 ];
 
 let triviaQuestion = trivia.questions;
-let triviaAnswer = trivia.answer;
+let triviaAnswer = trivia[0].answer;
+let triviaCorrect = trivia[0].correctAnswer;
 let counter = 5;
 let timer;
 
@@ -76,27 +78,38 @@ function loadAnswer() {
         answerButton.attr("data-answerButton", trivia[0].answer[x]);
         answerButton.append(trivia[0].answer[x]);
         $("#allbuttons").append(answerButton);
-       
     }
-    // $("#allbuttons").prepend("<button id=\"buttonA\"></button><button id=\"buttonB\"></button><button id=\"buttonC\"></button><button id=\"buttonD\"></button>");
-    // // for loop
-    // $("#buttonA").text(trivia.answer[0]);
-    // $("#buttonB").text(trivia.answer[1]);
-    // $("#buttonC").text(trivia.answer[2]);
-    // $("#buttonD").text(trivia.answer[3]);
-    // // $("#answerDiv").prepend("<button id=\"buttonA\" type=\"button\">" + trivia.answer[0] + "</button><buttonid=\"buttonB\" type=\"button\">" + trivia.answer[1] + "</button><button id=\"buttonC\" type=\"button\">" + trivia.answer[2] + "</button><button id=\"buttonD\" type=\"button\">" + trivia.answer[3] + "</button>");
 };
 
-function answerButton() {
-    $("#buttonA").click(function () {
-    console.log("#buttonA");
-    })
-};
 $("#allbuttons").on('click','.answerKeys',function(){
     $(this).attr("data-answerButton");
     console.log($(this).attr("data-answerButton"));
-})
+    console.log(triviaCorrect);
+    let x = $(this).attr("data-answerButton");
+    console.log(x);
+    if (x == triviaCorrect) {
+        console.log("You Won!")
+    } else {
+        console.log("You Lose!")
+    }
+});
 
+function answerSelection() {
+    clearInterval();
+    if($(e.targert).data("name")=== triviaCorrect) {
+        correctAnswer();
+    } else {
+        wrongAnswer();
+    }
+};
+
+function correctAnswer() {
+        console.log ("You won!")
+};
+
+function wrongAnswer() {
+        console.log("You lost!")
+};
 
 
 // var game = {

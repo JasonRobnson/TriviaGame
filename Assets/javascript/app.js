@@ -1,8 +1,8 @@
 'strict'
 
-// $(document).on('click','.answerKeys', function(){
-//     trivia.clicked();
-// })
+$(document).on('click','.answer-button', function(e){
+    game.answerSelection(e);
+})
 
 
 
@@ -77,6 +77,7 @@ let triviaQuestions = [{
     gameTimer: function gameTimer() {
         //  $("#timerDiv").html( counter);
           let timer = setInterval(function() {
+              clearInterval(timer);
                 $("#timerDiv").html("<h6>You have " + counter + " seconds reaming...");
                 if (counter === 0) {
                     // timeOver();
@@ -86,36 +87,66 @@ let triviaQuestions = [{
             },1000);
         },
     timeOver: function timeOver() {
-    //     $("#timerDiv").html('<h2>Sorry! You are out of time!</h2>');
-    //     clearInterval(timer);
+        $("#timerDiv").html('<h2>Sorry! You are out of time!</h2>');
+        clearInterval(timer);
     },
     loadQuestion: function loadQuestion() {
         counter = setInterval(game.gameTimer,1000);    
         $("#questionDiv").html('<h3>' + triviaQuestions[game.currentQuestion].question + '</h3>');
-        // for(let i = 0; i <question[game.currentQuestion].answer.Length; i++)
-    },
-    loadAnswer: function loadAnswer() {
         for ( let x = 0; x < triviaQuestions[game.currentQuestion].answer.length; x++) {
-       let answerButton = $("<button>");
-       answerButton.addClass("answerKeys");
-       answerButton.attr("data-answerButton", triviaQuestions[game.currentQuestion].answer[x]);
-       answerButton.append(triviaQuestions[game.currentQuestion].answer[x]);
-       $("#allbuttons").append(answerButton);
-     }
-    }, 
-    answerSelection: function answerSelection() {
+            let answerButton = $("<button>");
+            answerButton.addClass("answerKeys");
+            answerButton.attr("data-answerButton", triviaQuestions[game.currentQuestion].answer[x]);
+            answerButton.append(triviaQuestions[game.currentQuestion].answer[x]);
+            $("#allbuttons").append(answerButton);
+        }
+    },
+     nextQuestion: function nextQuestion () {
+         game.clearTimer ();
+         game.counter = 30;
+         $("questionDiv").html(game.counter);
+            game.currentQuestion++;
+            game.loadQuestion();
+     },
+    // loadAnswer: function loadAnswer() {
+    //     for ( let x = 0; x < triviaQuestions[game.currentQuestion].answer.length; x++) {
+    //    let answerButton = $("<button>");
+    //    answerButton.addClass("answerKeys");
+    //    answerButton.attr("data-answerButton", triviaQuestions[game.currentQuestion].answer[x]);
+    //    answerButton.append(triviaQuestions[game.currentQuestion].answer[x]);
+    //    $("#allbuttons").append(answerButton);
+    // //    console.log($(answerButton).data());
+    //  }
+    // }, 
+    answerSelection: function answerSelection(e) {
         clearInterval();
-        if($(e.targert).data("name")=== triviaCorrect) {
-            correctAnswer();
-        } else {
-            wrongAnswer();
+        if($(e.target).data("answerButton")==triviaQuestions[game.currentQuestion].correctAnswer) { 
+            game.correctAnswer();
+        } else { 
+            game.wrongAnswer();
         }
     },
     correctAnswer: function correctAnswer() {
-        console.log ("You won!")
+        console.log ("You won!");
+        clearInterval();
+        game.correct++;
+        $("#questionDiv").html('<h2> You got it Right!</h2>');
+         if(game.currentQuestion == trivaiQuestions.length-1){
+                setTimeout(game.resluts,3*1000)
+         } else {
+             setTimeout(game.nextQuestion,3*1000);
+         }
     },
     wrongAnswer: function wrongAnswer() {
-        console.log("You lost!")
+        console.log("You lost!");
+        clearInterval();
+        game.incorrect++;
+        $("#questionDiv").html('<h2> You got it Wrong!</h2>');
+         if(game.currentQuestion == triviaQuestions.length-1){
+                setTimeout(game.resluts,3*1000)
+         } else {
+             setTimeout(game.nextQuestion,3*1000);
+         }
     },
     results: function results() {
 
@@ -129,24 +160,16 @@ let triviaQuestions = [{
     reset: function() {
 
     },
+    clearTimer: function () {
+        clearInterval();
+    }
 };
 
 $(document).ready(function() {
     game.loadQuestion();
-    game.loadAnswer();
+
 });
 
 
-// $("#allbuttons").on('click','.answerKeys',function(){
-//     $(this).attr("data-answerButton");
-//     console.log($(this).attr("data-answerButton"));
-//     console.log(triviaCorrect);
-//     let x = $(this).attr("data-answerButton");
-//     console.log(x);
-//     if (x == triviaCorrect) {
-//         console.log("You Won!")
-//     } else {
-//         console.log("You Lose!")
-//     }
-// });
+
 
